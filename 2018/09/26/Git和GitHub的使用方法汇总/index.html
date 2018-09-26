@@ -43,8 +43,6 @@
     
     <title>
         
-            links | 
-        
         Bruce Lee
     </title>
 
@@ -215,7 +213,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Bruce Lee">
-    <meta name="msapplication-starturl" content="http://yoursite.com/links/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/26/Git和GitHub的使用方法汇总/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Bruce Lee">
@@ -230,13 +228,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/links/">
+    <meta property="og:url" content="http://yoursite.com/2018/09/26/Git和GitHub的使用方法汇总/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="links | Bruce Lee">
+    <meta property="og:title" content="Bruce Lee">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     
 
+    
+        <meta property="article:published_time" content="Wed Sep 26 2018 17:26:20 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 26 2018 13:17:25 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -244,13 +245,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/links/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/09/26/Git和GitHub的使用方法汇总/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/26/Git和GitHub的使用方法汇总/index.html",
+    "headline": "",
+    "datePublished": "Wed Sep 26 2018 17:26:20 GMT+0800",
+    "dateModified": "Wed Sep 26 2018 13:17:25 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Bruce Lee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "李文学在此欢迎您！"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Bruce Lee",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -286,125 +317,370 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-我们需要使用git在本地创建一个相同的项目。"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 我们需要使用git在本地创建一个相同的项目。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Git的诞生"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. Git的诞生</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-更改readme文件！！！"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 更改readme文件！！！</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-当本地项目中，新添加了一个-py-文件后，要上传到云端。"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 当本地项目中，新添加了一个 py 文件后，要上传到云端。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-克隆到本地。"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. 克隆到本地。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-查看当前路径的“完整路径”"><span class="post-toc-number">6.</span> <span class="post-toc-text">7. 查看当前路径的“完整路径”</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-新建本地文件夹后，克隆云端内容到本地目录"><span class="post-toc-number">7.</span> <span class="post-toc-text">8. 新建本地文件夹后，克隆云端内容到本地目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-运行sh文件，"><span class="post-toc-number">8.</span> <span class="post-toc-text">9. 运行sh文件，</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-sh-文件内容如下："><span class="post-toc-number">9.</span> <span class="post-toc-text">10.  sh 文件内容如下：</span></a></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Single Links Page -->
-    <style>
-    .md-links {
-        min-height: calc(100% - 120px - 5pc - 6em);
-        text-align: center;
-        overflow: auto;
-        padding: 0;
-        margin: 0 auto;
-        max-width: 320px;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (min-width: 680px) {
-        .md-links {
-            max-width: 640px;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    @media screen and (min-width: 1000px) {
-        .md-links {
-            max-width: 960px;
-        }
-    }
-
-    @media screen and (min-width: 1320px) {
-        .md-links {
-            max-width: 1280px;
-        }
-    }
-
-    @media screen and (min-width: 1640px) {
-        .md-links {
-            max-width: 1600px;
-        }
-    }
-
-    @media screen and (max-width: 480px) {
-        .md-links {
-            min-height: calc(100% - 200px - 5pc - 6em);
-            margin-top: 6em;
-        }
-    }
-
-    .md-links-item {
-        background: #fff;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-        height: 72px;
-        line-height: 15px;
-        margin: 20px 10px;
-        padding: 0px 0px;
-        transition: box-shadow 0.25s;
-    }
-
-    .md-links a {
-        color: #333;
-        text-decoration: none;
-    }
-
-    .md-links li {
-        width: 300px;
-        float: left;
-        list-style: none;
-    }
-
-    .md-links-item img {
-        float: left;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 11px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-    }
-
-    .md-links-item:hover {
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .md-links-item a:hover{
-        cursor: pointer;
-    }
-
-    .md-links-title {
-        font-size: 20px;
-        line-height: 50px;
-    }
-
-    #scheme-Paradox .mdl-mini-footer{
-        clear: left;
-    }
-    #bottom{
-        position: relative;
-    }
-</style>
-
-<ul class="md-links">
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
-            <li class="md-links-item">
-                <a href="https://bujige.net/" title="Walking Boy&#39;s Blog" target="_blank">
-                    <img src="http://example.com/avatar.png" alt="Walking Boy&#39;s Blog" height="72px"/>
-                    <span class="md-links-title">Walking Boy&#39;s Blog</span><br />
-                    <span>Blog___行走的少年</span>
-                </a>
-            </li>
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
         
+    
+            <p class="article-headline-p">
+                
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Bruce Lee</strong>
+        <span>Sep 26, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com/2018/09/26/Git和GitHub的使用方法汇总/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com/2018/09/26/Git和GitHub的使用方法汇总/index.html&via=Bruce Lee" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/26/Git和GitHub的使用方法汇总/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/26/Git和GitHub的使用方法汇总/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Bruce Lee&title=&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/09/26/Git和GitHub的使用方法汇总/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
     
 </ul>
 
-<script type="text/ls-javascript" id="page-links-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-    $(document).ready(function() {
-        adjustFooter();
-    });
-</script>
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>#源文件：三、Linux相关-&gt; Git 和 GitHub 的使用方法汇总</p>
+<p><a href="https://www.cnblogs.com/fnng/archive/2011/08/25/2153807.html" target="_blank" rel="noopener">参考链接如下</a></p>
+<h2 id="1-我们需要使用git在本地创建一个相同的项目。"><a href="#1-我们需要使用git在本地创建一个相同的项目。" class="headerlink" title="1. 我们需要使用git在本地创建一个相同的项目。"></a>1. 我们需要使用git在本地创建一个相同的项目。</h2><pre><code>&lt;pre&gt;
+$ makdir ~/hello-world    //创建一个项目hello-world
+$ cd ~/hello-world    //打开这个项目
+$ git init    //初始化 
+$ touch README
+$ git add README   //更新README文件
+$ git commit -m &apos;first commit&apos;//提交更新，并注释信息“first commit” 
+$ git remote add origin git@github.com:defnngj/hello-world.git   //连接远程github项目  
+$ git push -u origin master   //将本地项目更新到github项目上去
+&lt;/pre&gt;
+
+源文档 &lt;https://www.cnblogs.com/fnng/archive/2011/08/25/2153807.html&gt; 
+</code></pre><h2 id="2-Git的诞生"><a href="#2-Git的诞生" class="headerlink" title="2. Git的诞生"></a>2. Git的诞生</h2><pre><code>Linus Torvalds在1991年创建了开源系统Linux，在2002年以前，世界各地的志愿者把源代码文件通过diff的方式发给Linus，然后由Linus本人通过手工方式合并代码！然后，Linux系统已经发展了十年了，代码库之大让Linus很难继续通过手工方式管理了。
+
+源文档 &lt;http://www.testclass.net/git/git-github-start/&gt; 
+</code></pre><h2 id="3-更改readme文件！！！"><a href="#3-更改readme文件！！！" class="headerlink" title="3. 更改readme文件！！！"></a>3. 更改readme文件！！！</h2><pre><code>第一步尝试失败：  
+&lt;pre&gt;
+Bruce Lee@Bruce MINGW64 ~/bruce_demo_pack (master)
+$ vim README
+
+Bruce  Lee@Bruce MINGW64 ~/bruce_demo_pack (master)
+$ git push -u origin master
+Everything up-to-date
+Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;origin&apos;.
+&lt;/pre&gt;
+
+单独更改了其中的README文件后，直接执行“git push -u origin master”语句，其并不能同步到GitHub网站上去。
+</code></pre><blockquote>
+<p>Note:   在第一次远程链接某项目时，这一句，必不可少！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@github.com:guanzizai1006/bruce_demo_pack.git</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>  第二次尝试成功：<br>        <pre><br>        Bruce  Lee@Bruce MINGW64 ~/bruce_demo_pack (master)<br>        $ git commit -m “用git commit -m 提交更新”<br>        [master bffe44a] “用git commit -m 提交更新<br>         1 file changed, 11 insertions(+)<br>        </pre></p>
+<p>  使用此命令，  </p>
+<pre><code>&lt;pre&gt;
+$ git commit -m &quot;用git commit -m 提交更新&quot;  //双引号内是添加的评论内容,成功提交更新，下一步是要push上去！
+$ git push -u origin master 
+
+Bruce  Lee@Bruce MINGW64 ~/bruce_demo_pack (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 660 bytes | 660.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:guanzizai1006/bruce_demo_pack.git
+   13cf1ed..bffe44a  master -&gt; master
+Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;origin&apos;.
+
+&lt;/pre&gt;
+</code></pre><h2 id="4-当本地项目中，新添加了一个-py-文件后，要上传到云端。"><a href="#4-当本地项目中，新添加了一个-py-文件后，要上传到云端。" class="headerlink" title="4. 当本地项目中，新添加了一个 py 文件后，要上传到云端。"></a>4. 当本地项目中，新添加了一个 py 文件后，要上传到云端。</h2><pre>
+$ git add one.py     //更新README文件
+
+$ git commit -m 'add the file named one.py'   
+//提交更新，并注释信息“first commit，用以说明本次更新的是啥” 
+
+源文档 <https: 25="" 2011="" www.cnblogs.com="" fnng="" archive="" 08="" 2153807.html=""> 
+
+【当然，这时候可以考虑，要不要远程连接github项目。 
+$ git remote add origin git@github.com:guanzizai1006/bruce_demo_pack.git
+】
 
 
+$ git push -u origin master
+//将本地项目更新到github项目上去
+
+</https:></pre>
+
+<h2 id="5-克隆到本地。"><a href="#5-克隆到本地。" class="headerlink" title="5. 克隆到本地。"></a>5. 克隆到本地。</h2><p>（前期准备阶段）<br>首先，下载安装Git。</p>
+<p>其次，通过Git生成本地公钥，并且将公钥添加到GitHub中。</p>
+<p>最后，设置仓库人员的用户名和邮箱地址。</p>
+<p>用  git clone   命令，克隆到目标路径。<br>（ssh 方式）</p>
+<p><img src="http://pf6sbcbe5.bkt.clouddn.com/1.png" alt="克隆到本地"></p>
+<p>或者  （http 方式）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  git clone https://github.com/defnngj/project-name</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>“git add” 命令对当前目录下的文件添加跟踪。这个命令后面 加一个 点 . 则意味着路径下的所有文件<br>“git commit” 命令将添加文件提交到本地仓库。<br>“git push” 将本地项目提交到远程仓库GitHub。<br>除第一次下载项目需要通过 “git clone” 将项目克隆到本地外,后续再使用 “git pull” 命令时会直接将更新拉取到本地</p>
+</blockquote>
+<pre>
+$ git pull origin master
+</pre>
+源文档 <http: www.testclass.net="" git="" git-github-used=""> 
+
+## 6.命令行，windows进入别的盘符
+<pre>
+Bruce  Lee@Bruce MINGW64 ~
+$ cd /d
+</pre>
+Git的入门学习和使用。
+<https: 51694888="" blog.csdn.net="" tonyshengtan="" article="" details="">
+
+————————Linux下安装git 并下载码云仓库——————————————
+<pre>
+bruce@bruce-virtual-machine:~$ sudo apt-get install git
+[sudo] bruce 的密码： 
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+git 已经是最新版 (1:2.7.4-0ubuntu1.4)。
+升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 83 个软件包未被升级。
+
+</pre>
+
+<ul>
+<li><p>新建本地文件夹</p>
+<pre>
+bruce@bruce-virtual-machine:~/桌面$ mkdir face_fatigue_detection
+</pre>
+</li>
+<li><p>克隆到本地</p>
+<pre>
+bruce@bruce-virtual-machine:~/桌面/face_fatigue_detection$ git clone https://gitee.com/thc1234/face_fatigue_detection.git
+正克隆到 'face_fatigue_detection'...
+Username for 'https://gitee.com': guanzizai1006
+Password for 'https://Bruce@gitee.com': 
+</pre>
+</li>
+<li><p>克隆完成啦</p>
+<pre>
+bruce@bruce-virtual-machine:~/桌面/face_fatigue_detection$ git clone https://gitee.com/thc1234/face_fatigue_detection.git
+正克隆到 'face_fatigue_detection'...
+Username for 'https://gitee.com': guanzizai1006
+Password for 'https://guanzizai1006@gitee.com': 
+remote: Enumerating objects: 405, done.
+remote: Counting objects: 100% (405/405), done.
+remote: Compressing objects: 100% (398/398), done.
+remote: Total 405 (delta 196), reused 0 (delta 0)
+接收对象中: 100% (405/405), 113.33 MiB | 1.23 MiB/s, 完成.
+处理 delta 中: 100% (196/196), 完成.
+</pre>
+
+
+
+</li>
+</ul>
+<p>———————— Git配置 gitee码云————————————————————</p>
+<p>由本地文件夹更新到云端的话，则只要命令行 ./push.sh 则可以完成了。</p>
+<p>由云端更新到本地，只需要在本地目录下，执行  git pull 就OK了。</p>
+<p>————————————————————————————————————</p>
+<h2 id="7-查看当前路径的“完整路径”"><a href="#7-查看当前路径的“完整路径”" class="headerlink" title="7. 查看当前路径的“完整路径”"></a>7. 查看当前路径的“完整路径”</h2><p><img src="http://pf6sbcbe5.bkt.clouddn.com/2.png" alt="查看当前路径"></p>
+<h2 id="8-新建本地文件夹后，克隆云端内容到本地目录"><a href="#8-新建本地文件夹后，克隆云端内容到本地目录" class="headerlink" title="8. 新建本地文件夹后，克隆云端内容到本地目录"></a>8. 新建本地文件夹后，克隆云端内容到本地目录</h2><p><img src="http://pf6sbcbe5.bkt.clouddn.com/3.png" alt="查看当前路径"></p>
+<h2 id="9-运行sh文件，"><a href="#9-运行sh文件，" class="headerlink" title="9. 运行sh文件，"></a>9. 运行sh文件，</h2><p><img src="http://pf6sbcbe5.bkt.clouddn.com/4.png" alt="查看当前路径"></p>
+<h2 id="10-sh-文件内容如下："><a href="#10-sh-文件内容如下：" class="headerlink" title="10.  sh 文件内容如下："></a>10.  sh 文件内容如下：</h2><pre>
+#!/bin/bash
+git add ./*
+git commit -m "shell"
+git push
+</pre>
+
+<p>截图如下<br><img src="http://pf6sbcbe5.bkt.clouddn.com/5.png" alt="查看当前路径"></p>
+</https:></http:>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/09/26/linux命令总结/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/26/book___Bite_of_python/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -567,6 +843,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
